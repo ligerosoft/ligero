@@ -1,0 +1,13 @@
+@import './mixins/hairline';
+
+[class*='ligero-hairline'] {
+  &::after {
+    .hairline();
+  }
+}
+
+.ligero-hairline {
+  &--top-bottom {
+    position: relative;
+  }
+}

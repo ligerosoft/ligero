@@ -1,0 +1,72 @@
+@import '../../style/default';
+@import '../../style/mixins/index.less';
+
+@cell: ~'@{prefix}-cell';
+
+.@{cell} {
+  position: relative;
+  display: flex;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
+  line-height: @cell-line-height;
+  background-color: @cell-background-color;
+
+  &::after {
+    .hairline-bottom(@border-color, @cell-horizontal-padding, @cell-horizontal-padding);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &__content {
+    flex: 1;
+    width: auto;
+    color: @cell-font-color;
+    font-size: @cell-font-size;
+
+    &--ellipsis {
+      .ellipsis();
+    }
+  }
+
+  &__right {
+    flex: 1;
+    margin-left: @padding-base;
+    color: @cell-right-font-color;
+    font-size: @cell-right-font-size;
+    text-align: right;
+  }
+
+  &__icon {
+    margin-right: @padding-base;
+    font-size: @cell-icon-font-size;
+    line-height: @cell-line-height;
+  }
+
+  &__label {
+    margin-top: @cell-label-margin-top;
+    color: @cell-label-font-color;
+    font-size: @cell-label-font-size;
+    line-height: @cell-label-line-height;
+  }
+
+  &__extra {
+    margin-left: @padding-base;
+    font-size: @cell-extra-font-size;
+  }
+  &-group {
+    &__title {
+      padding: @cell-vertical-padding @cell-horizontal-padding;
+      color: @text-color-secondary;
+      font-size: @font-size-md;
+    }
+  }
+}

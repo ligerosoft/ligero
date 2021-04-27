@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render button with plain props and color 1`] = `
+<button
+  class="ligero-button ligero-button--primary ligero-button--plain"
+>
+  <div
+    class="ligero-button__content"
+  >
+    <span
+      class="ligero-button__text"
+    >
+      plain button
+    </span>
+  </div>
+</button>
+`;
+
+exports[`Button render button with plain props and color 2`] = `
+<ForwardRef(Button)
+  color="purple"
+  plain={true}
+>
+  <button
+    className="ligero-button ligero-button--default ligero-button--plain"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#fff",
+        "borderColor": "purple",
+        "color": "purple",
+      }
+    }
+  >
+    <div
+      className="ligero-button__content"
+    >
+      <span
+        className="ligero-button__text"
+      >
+        plain button
+      </span>
+    </div>
+  </button>
+</ForwardRef(Button)>
+`;
+
+exports[`Button render correctly 1`] = `
+<button
+  class="ligero-button ligero-button--default"
+>
+  <div
+    class="ligero-button__content"
+  >
+    <span
+      class="ligero-button__text"
+    >
+      button
+    </span>
+  </div>
+</button>
+`;
+
+exports[`Button should support link 1`] = `
+<a
+  class="ligero-button ligero-button--default"
+  href="https://github.com/ligerosoft/ligero"
+>
+  <div
+    class="ligero-button__content"
+  >
+    <span
+      class="ligero-button__text"
+    >
+      link
+    </span>
+  </div>
+</a>
+`;

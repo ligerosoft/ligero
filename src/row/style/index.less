@@ -1,0 +1,35 @@
+@import '../../style/default.less';
+
+@row: ~'@{prefix}-row';
+
+.@{row} {
+  display: flex;
+
+  &--wrap {
+    flex-flow: row wrap;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-bottom {
+    align-items: flex-end;
+  }
+}

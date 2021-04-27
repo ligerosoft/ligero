@@ -1,0 +1,24 @@
+@import '../../style/default.less';
+
+@col: ~'@{prefix}-col';
+
+.@{col} {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+}
+
+.generate-col(24);
+
+.generate-col(@n, @i: 1) when (@i <= 24) {
+  @width: percentage(@i / 24);
+  .@{col}--@{i} {
+    flex-basis: @width;
+    max-width: @width;
+  }
+  .@{col}--offset-@{i} {
+    margin-left: @width;
+  }
+  .generate-col(@n, @i + 1);
+}

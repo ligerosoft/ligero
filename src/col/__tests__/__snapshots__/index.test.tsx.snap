@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col mount col correctly 1`] = `
+<Col>
+  <div
+    className="ligero-col"
+    style={Object {}}
+  />
+</Col>
+`;
+
+exports[`Col render col with span 1`] = `
+<Row>
+  <div
+    className="ligero-row ligero-row--wrap"
+  >
+    <Col
+      index={0}
+      key="0"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={Object {}}
+      >
+        col 8
+      </div>
+    </Col>
+    <Col
+      index={1}
+      key="1"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={Object {}}
+      >
+        col 8
+      </div>
+    </Col>
+    <Col
+      index={2}
+      key="2"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={Object {}}
+      >
+        col 8
+      </div>
+    </Col>
+  </div>
+</Row>
+`;
+
+exports[`Col render gutter correctly 1`] = `
+<Row
+  gutter={20}
+>
+  <div
+    className="ligero-row ligero-row--wrap"
+  >
+    <Col
+      index={0}
+      key="0"
+      span={6}
+    >
+      <div
+        className="ligero-col ligero-col--6"
+        style={
+          Object {
+            "paddingLeft": undefined,
+            "paddingRight": 10,
+          }
+        }
+      >
+        6
+      </div>
+    </Col>
+    <Col
+      index={1}
+      key="1"
+      span={12}
+    >
+      <div
+        className="ligero-col ligero-col--12"
+        style={
+          Object {
+            "paddingLeft": 10,
+            "paddingRight": 0,
+          }
+        }
+      >
+        12
+      </div>
+    </Col>
+    <Col
+      index={2}
+      key="2"
+      span={6}
+    >
+      <div
+        className="ligero-col ligero-col--6"
+        style={
+          Object {
+            "paddingLeft": 20,
+            "paddingRight": -10,
+          }
+        }
+      >
+        6
+      </div>
+    </Col>
+    <Col
+      index={3}
+      key="3"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={
+          Object {
+            "paddingLeft": undefined,
+            "paddingRight": 10,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+    <Col
+      index={4}
+      key="4"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={
+          Object {
+            "paddingLeft": 10,
+            "paddingRight": 0,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+    <Col
+      index={5}
+      key="5"
+      span={8}
+    >
+      <div
+        className="ligero-col ligero-col--8"
+        style={
+          Object {
+            "paddingLeft": 20,
+            "paddingRight": -10,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+    <Col
+      index={6}
+      key="6"
+      offset={4}
+      span={4}
+    >
+      <div
+        className="ligero-col ligero-col--4 ligero-col--offset-4"
+        style={
+          Object {
+            "paddingLeft": undefined,
+            "paddingRight": 10,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+    <Col
+      index={7}
+      key="7"
+      span={6}
+    >
+      <div
+        className="ligero-col ligero-col--6"
+        style={
+          Object {
+            "paddingLeft": 10,
+            "paddingRight": 0,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+    <Col
+      index={8}
+      key="8"
+      span={10}
+    >
+      <div
+        className="ligero-col ligero-col--10"
+        style={
+          Object {
+            "paddingLeft": 20,
+            "paddingRight": -10,
+          }
+        }
+      >
+        8
+      </div>
+    </Col>
+  </div>
+</Row>
+`;

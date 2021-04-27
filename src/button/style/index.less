@@ -3,6 +3,180 @@
 @button: ~'@{prefix}-button';
 
 .@{button} {
+  position: relative;
   display: inline-block;
-  font-size: @font-size-lg;
+  box-sizing: border-box;
+  height: @button-height-md;
+  margin: 0;
+  padding: 0 @padding-md;
+  font-size: @font-size-md;
+  text-align: center;
+  text-decoration: none;
+  border-radius: @border-radius-sm;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  user-select: none;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    content: ' ';
+  }
+
+  // size
+  &.@{button}--xs {
+    height: @button-height-xs;
+    padding: 0 @padding-base;
+    font-size: @font-size-xs;
+  }
+
+  &.@{button}--sm {
+    height: @button-height-sm;
+    padding: 0 @padding-xs;
+    font-size: @font-size-sm;
+  }
+
+  &.@{button}--lg {
+    height: @button-height-lg;
+    font-size: @font-size-lg;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &::before {
+      content: ' ';
+    }
+  }
+
+  // type
+  &--primary {
+    color: @button-primary-color;
+    background-color: @button-primary-background-color;
+    border: 1px solid @button-primary-border-color;
+  }
+
+  &--default {
+    color: @button-default-color;
+    background-color: @button-default-background-color;
+    border: 1px solid @button-default-border-color;
+  }
+
+  &--success {
+    color: @button-success-color;
+    background-color: @button-success-background-color;
+    border: 1px solid @button-success-border-color;
+  }
+
+  &--warning {
+    color: @button-warning-color;
+    background-color: @button-warning-background-color;
+    border: 1px solid @button-warning-border-color;
+  }
+
+  &--danger {
+    color: @button-danger-color;
+    background-color: @button-danger-background-color;
+    border: 1px solid @button-danger-border-color;
+  }
+
+  &--dashed {
+    color: @button-default-color;
+    background-color: @white;
+    border: 1px dashed @button-default-border-color;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: @button-disabled-opacity;
+    touch-action: none;
+  }
+
+  &--plain {
+    background-color: @white;
+
+    &.@{button}--primary {
+      color: @button-primary-background-color;
+    }
+
+    &.@{button}--success {
+      color: @button-success-background-color;
+    }
+
+    &.@{button}--warning {
+      color: @button-warning-background-color;
+    }
+
+    &.@{button}--danger {
+      color: @button-danger-background-color;
+    }
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--round {
+    min-width: @button-height-md;
+    border-radius: @button-height-md;
+
+    &.@{button}--xs {
+      min-width: @button-height-xs;
+      border-radius: @button-height-xs;
+    }
+
+    &.@{button}--sm {
+      min-width: @button-height-sm;
+      border-radius: @button-height-sm;
+    }
+
+    &.@{button}--lg {
+      min-width: @button-height-lg;
+      border-radius: @button-height-lg;
+    }
+  }
+
+  &--circle {
+    border-radius: @border-radius-max;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &__loading,
+  &__icon {
+    display: inline-block;
+    color: inherit;
+    font-size: inherit;
+    vertical-align: middle;
+
+    + .@{button}__text {
+      margin-left: @padding-base;
+    }
+  }
+
+  &--only-icon {
+    padding: 0 @padding-sm;
+
+    &.@{button}--xs {
+      padding: 0 @padding-base;
+    }
+
+    &.@{button}--sm {
+      padding: 0 @padding-xs;
+    }
+
+    &.@{button}--lg {
+      padding: 0 @padding-md;
+    }
+  }
 }
