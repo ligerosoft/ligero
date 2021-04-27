@@ -4,3 +4,7 @@ es
 lib
 node_modules
 docs
+.github
+scripts
+index.js
+webpack.config.js
