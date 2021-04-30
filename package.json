@@ -12,7 +12,7 @@
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "node ./scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "prettier": "prettier --parser=typescript --write \"src/**/*.{js,jsx,tsx,ts,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
@@ -63,15 +63,14 @@
     }
   },
   "resolutions": {
-    "@types/react": "^16.9.43",
-    "@types/vfile-message": "^2.0.0"
+    "@types/react": "^16.9.43"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "classnames": "^2.3.1",
-    "conventional-changelog-cli": "^2.1.1",
     "react": "^17.0.0",
-    "react-is": "^17.0.2"
+    "react-is": "^17.0.2",
+    "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -84,7 +83,7 @@
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.22",
     "@types/react-is": "^17.0.0",
-    "@types/vfile-message": "^2.0.0",
+    "@types/react-transition-group": "^4.4.1",
     "@umijs/fabric": "^2.5.7",
     "@umijs/test": "^3.0.5",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
@@ -93,6 +92,7 @@
     "chalk": "^4.1.0",
     "commitizen": "^4.2.3",
     "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
     "css-loader": "^5.2.0",
     "css-minimizer-webpack-plugin": "^1.3.0",
     "cz-conventional-changelog": "^3.0.2",
@@ -109,11 +109,12 @@
     "less-loader": "^8.0.0",
     "lint-staged": "^10.0.7",
     "mini-css-extract-plugin": "^1.4.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.2.1",
     "progress-bar-webpack-plugin": "^2.1.0",
     "react-dom": "^17.0.2",
     "semver": "^7.3.5",
     "terser-webpack-plugin": "^5.1.1",
+    "typescript": "^4.1.0",
     "webpack": "^5.24.2",
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0",

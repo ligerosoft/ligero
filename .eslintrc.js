@@ -3,5 +3,7 @@ module.exports = {
   rules: {
     'no-param-reassign': 'off',
     '@typescript-eslint/consistent-type-imports': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'no-plusplus': 'off',
   },
 };
