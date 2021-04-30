@@ -23,7 +23,7 @@ describe('Cell', () => {
   it('render with align correctly', () => {
     const wrapper = mount(<Cell />);
     const aligns = ['top', 'center', 'bottom'];
-    aligns.forEach(align => {
+    aligns.forEach((align) => {
       wrapper.setProps({ align });
       expect(wrapper).toMatchSnapshot();
     });

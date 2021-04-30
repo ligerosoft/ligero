@@ -31,7 +31,7 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   const childSpans = (): number[] => {
     if (!childrenNodes.length) return [];
     const result: number[] = [];
-    childrenNodes.forEach(child => {
+    childrenNodes.forEach((child) => {
       result.push(child.props.span || 0);
     });
     return result;
@@ -59,7 +59,7 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
     if (!x) {
       return spaces;
     }
-    groups.forEach(group => {
+    groups.forEach((group) => {
       const average = x / 2;
       group.forEach((item, index) => {
         if (index === 0) {

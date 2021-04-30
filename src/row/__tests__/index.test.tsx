@@ -16,13 +16,13 @@ describe('Row', () => {
     wrapper.setProps({ align: 'center' });
     const aligns = ['top', 'center', 'bottom'];
 
-    aligns.forEach(align => {
+    aligns.forEach((align) => {
       wrapper.setProps({ align });
       expect(wrapper.render().hasClass(`ligero-row--align-${align}`)).toBe(true);
     });
     const justifies = ['start', 'center', 'end', 'space-around', 'space-between'];
 
-    justifies.forEach(justify => {
+    justifies.forEach((justify) => {
       wrapper.setProps({ justify });
       expect(wrapper.render().hasClass(`ligero-row--justify-${justify}`)).toBe(true);
     });

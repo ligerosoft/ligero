@@ -10,7 +10,7 @@ export interface CellGroupProps {
   border?: boolean;
 }
 
-const CellGroup: React.FC<CellGroupProps> = props => {
+const CellGroup: React.FC<CellGroupProps> = (props) => {
   const { prefixCls, children, title, className, border = true } = props;
   const { bem } = usePrefix('cell-group', prefixCls);
   return (

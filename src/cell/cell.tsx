@@ -15,7 +15,7 @@ interface CellProps {
   align?: 'top' | 'center' | 'bottom';
 }
 
-const Cell: React.FC<CellProps> = props => {
+const Cell: React.FC<CellProps> = (props) => {
   const { className, extra, right, icon, children, label, ellipsis, align } = props;
   const { bem } = usePrefix('cell', props.prefixCls);
   return (

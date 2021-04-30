@@ -5,7 +5,7 @@ export interface ConfigProviderProps {
   theme?: 'light' | 'dark';
 }
 
-const ConfigProvider: React.FC<ConfigProviderProps> = props => {
+const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
   const { prefixCls, children, theme = 'light' } = props;
 
   const getPrefixCls = (context: ConfigConsumerProps) => {
@@ -26,7 +26,7 @@ const ConfigProvider: React.FC<ConfigProviderProps> = props => {
     };
     return <ConfigContext.Provider value={value}>{children}</ConfigContext.Provider>;
   };
-  return <ConfigContext.Consumer>{context => renderProvider(context)}</ConfigContext.Consumer>;
+  return <ConfigContext.Consumer>{(context) => renderProvider(context)}</ConfigContext.Consumer>;
 };
 
 export default ConfigProvider;
