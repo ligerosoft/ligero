@@ -15,6 +15,14 @@ export function isString(val: unknown): val is string {
   return typeof val === 'string';
 }
 
+export function isDef(val: unknown): val is undefined {
+  return typeof val !== undefined;
+}
+
+export function isFunction(val: unknown) {
+  return typeof val === 'function';
+}
+
 export default function toArray(
   children: React.ReactNode,
   option: Record<string, any> = {},
