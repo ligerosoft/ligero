@@ -1,6 +1,6 @@
 import cs from 'classnames';
 import React, { useContext } from 'react';
-import usePrefix from '../hooks/usePrefix';
+import usePrefix from '../hooks/use-prefix';
 import RowContext from '../row/RowContext';
 import { isNumber } from '../utils';
 

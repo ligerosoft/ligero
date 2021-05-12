@@ -1,6 +1,6 @@
 import cs from 'classnames';
 import React, { useMemo } from 'react';
-import usePrefix from '../hooks/usePrefix';
+import usePrefix from '../hooks/use-prefix';
 import toArray, { tuple } from '../utils/function';
 import RowContext from './RowContext';
 

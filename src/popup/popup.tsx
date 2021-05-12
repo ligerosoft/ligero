@@ -1,8 +1,8 @@
 import cs from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import useLock from '../hooks/useLock';
-import usePrefix from '../hooks/usePrefix';
+import useLock from '../hooks/use-lock';
+import usePrefix from '../hooks/use-prefix';
 import Portal, { PortalProps } from '../portal';
 
 export interface PopupProps extends PortalProps {
@@ -19,6 +19,7 @@ export interface PopupProps extends PortalProps {
   shouldLock?: boolean;
   forceRender?: boolean;
   className?: string;
+  onClose?: () => void;
 }
 
 const Popup: React.FC<PopupProps> = (props) => {
@@ -81,6 +82,7 @@ const Popup: React.FC<PopupProps> = (props) => {
 
   const handleExit = () => {
     setMount(false);
+    props.onClose?.();
   };
 
   const handleEnter = () => {

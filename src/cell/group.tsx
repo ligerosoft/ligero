@@ -1,5 +1,5 @@
 import React from 'react';
-import usePrefix from '../hooks/usePrefix';
+import usePrefix from '../hooks/use-prefix';
 import { BORDER_TOP_BOTTOM } from '../constant';
 import cs from 'classnames';
 

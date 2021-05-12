@@ -1,7 +1,7 @@
 import { LoadingOutlined } from '@ant-design/icons';
 import classnames from 'classnames';
 import React from 'react';
-import usePrefix from '../hooks/usePrefix';
+import usePrefix from '../hooks/use-prefix';
 import { tuple } from '../utils/function';
 
 const ButtonTypes = tuple('default', 'primary', 'success', 'warning', 'dashed', 'danger');

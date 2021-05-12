@@ -1,6 +1,6 @@
 import cs from 'classnames';
 import React from 'react';
-import usePrefix from '../hooks/usePrefix';
+import usePrefix from '../hooks/use-prefix';
 
 interface CellProps {
   prefixCls?: string;
