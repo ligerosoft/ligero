@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "ligero",
-  "version": "1.0.1-0",
+  "version": "0.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -16,10 +16,10 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "lib/index.js",
+  "module": "es/index.esm.js",
   "unpkg": "dist/ligero.min.js",
-  "typings": "dist/index.d.ts",
+  "typings": "lib/index.d.ts",
   "keywords": [
     "react",
     "mobile",
