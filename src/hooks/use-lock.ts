@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useTouch from './useTouch';
+import useTouch from './use-touch';
 
 const BODY_LOCK_CLASS = `ligero-overflow-hidden`;
 
