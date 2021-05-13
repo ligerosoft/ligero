@@ -10,7 +10,8 @@ export default function useLazyRender(show?: boolean) {
     return () => {
       mounted.current = false;
     };
-  }, []);
+  }, [show]);
 
-  return (render: () => JSX.Element) => () => (mounted.current ? render() : null);
+  return (render: (...options: any[]) => JSX.Element) => (...args: any[]) =>
+    mounted.current ? render(...args) : null;
 }

@@ -124,12 +124,12 @@ export default () => {
         destroyOnClose={destroy}
         visible={visible}
         getContainer={container}
-        mask={mask}
+        overlay={mask}
         afterClose={() => {
           setVisible(false);
         }}
       >
-        <div style={getStyle()}>content</div>
+        <div style={getStyle()}></div>
       </Popup>
     </>
   );
@@ -141,14 +141,13 @@ export default () => {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | :-- | --- | --- |
 | visible | 是否展示弹出层 | `boolean` | `false` |
-| mask | 是否展示遮罩层 | `boolean` | `true` |
-| maskClosable | 是否允许点击遮罩层关闭 | `boolean` | `true` |
+| overlay | 是否展示遮罩层 | `boolean` | `true` |
+| overlayClosable | 是否允许点击遮罩层关闭 | `boolean` | `true` |
 | position | 弹出层弹出位置, 可选 `top`,`right`, `bottom`,`left`, `center` | `string` | `center` |
 | duration | 弹出层动画持续时间 | `number` | `300` |
 | destroyOnClose | 关闭弹出层销毁内部 | `boolean` | `false` |
 | shouldLock | 弹出层弹出层禁止滚动 | `boolean` | `true` |
-| onMaskClick | 点击遮罩层事件 | `function` | `-` |
+| onOverlayClick | 点击遮罩层事件 | `function` | `-` |
 | afterClose | 弹出层关闭之后事件 | `function` | `-` |
-| maskClassName | 遮罩层样式类名 | `string` | `-` |
 | className | 弹出层样式类名 | `string` | `-` |
 | prefixCls | 类型前缀 | `stirng` | `-` |

@@ -1,19 +1,19 @@
+import Transition from '@/transition';
 import cs from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import useLock from '../hooks/use-lock';
 import usePrefix from '../hooks/use-prefix';
+import Overlay from '../overlay';
 import Portal, { PortalProps } from '../portal';
 
 export interface PopupProps extends PortalProps {
-  mask?: boolean;
-  maskClosable?: boolean;
+  overlay?: boolean;
+  overlayClosable?: boolean;
   prefixCls?: string;
-  maskClassName?: string;
   position?: 'top' | 'right' | 'bottom' | 'left' | 'center';
   duration?: number;
   destroyOnClose?: boolean;
-  onMaskClick?: () => void;
+  onOverlayClick?: () => void;
   afterClose?: () => void;
   visible?: boolean;
   shouldLock?: boolean;
@@ -25,23 +25,19 @@ export interface PopupProps extends PortalProps {
 const Popup: React.FC<PopupProps> = (props) => {
   const {
     getContainer,
-    maskClassName,
-    mask = true,
+    overlay = true,
     position = 'center',
-    maskClosable = true,
+    overlayClosable = true,
     duration = 300,
     destroyOnClose = false,
     afterClose,
     children,
+    onOverlayClick,
     shouldLock = true,
     className,
   } = props;
-  const { bem, prefixCls } = usePrefix('popup', props.prefixCls);
+  const { bem } = usePrefix('popup', props.prefixCls);
   const [visible, setVisible] = useState(false);
-  const [mount, setMount] = useState(false);
-  const maskClasses = cs(maskClassName, bem('mask', { visible: mask && visible }));
-  const rootClasses = cs(className, bem({ [position]: position, hidden: !visible && !mount }));
-  const contentClasses = cs(bem('content', { [position]: position }));
 
   useLock(Boolean(props.visible && shouldLock));
 
@@ -65,53 +61,42 @@ const Popup: React.FC<PopupProps> = (props) => {
   }, [props.visible]);
 
   const onMaskClick = () => {
-    props.onMaskClick?.();
-    if (maskClosable) {
+    onOverlayClick?.();
+    if (overlayClosable) {
       close();
     }
   };
 
   const animations = {
-    top: `${prefixCls}-slide-down`,
-    right: `${prefixCls}-slide-left`,
-    bottom: `${prefixCls}-slide-up`,
-    left: `${prefixCls}-slide-right`,
-    center: `${prefixCls}-fade`,
-  };
-  const contentAnimation = animations[position];
+    top: `slide-down`,
+    right: `slide-left`,
+    bottom: `slide-up`,
+    left: `slide-right`,
+    center: `fade`,
+  } as const;
 
-  const handleExit = () => {
-    setMount(false);
-    props.onClose?.();
-  };
-
-  const handleEnter = () => {
-    setMount(true);
-  };
-
-  const onTransitionEnd = () => {
-    if (!visible) {
-      afterClose?.();
-    }
+  const onExited = () => {
+    afterClose?.();
   };
   const node = (
-    <div className={rootClasses}>
-      <CSSTransition classNames={`${prefixCls}-fade`} timeout={duration} in={visible} appear>
-        <div className={maskClasses} onClick={onMaskClick} />
-      </CSSTransition>
-      <CSSTransition
-        unmountOnExit={destroyOnClose}
-        appear
-        timeout={duration}
-        in={visible}
-        classNames={contentAnimation}
-        onExited={handleExit}
-        onEnter={handleEnter}
-        addEndListener={onTransitionEnd}
+    <>
+      {overlay && <Overlay duration={duration} visible={visible} onClick={onMaskClick} />}
+      <Transition
+        destroyOnClose={destroyOnClose}
+        duration={duration}
+        visible={visible}
+        transition={animations[position]}
+        onExited={onExited}
       >
-        <div className={contentClasses}>{children}</div>
-      </CSSTransition>
-    </div>
+        {(style) => {
+          return (
+            <div className={cs(className, bem([position]))} style={{ ...style }}>
+              {children}
+            </div>
+          );
+        }}
+      </Transition>
+    </>
   );
 
   if (getContainer === false) {
@@ -121,6 +106,6 @@ const Popup: React.FC<PopupProps> = (props) => {
   return <Portal getContainer={getContainer}>{node}</Portal>;
 };
 
-Popup.displayName = 'InternalPopup';
+Popup.displayName = '@ligero/popup';
 
 export default Popup;
