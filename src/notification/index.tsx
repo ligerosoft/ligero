@@ -1,4 +1,6 @@
-import Notice from './notification';
+import Notification from './notification';
 
-export type { NotificationInstance, NotificationProps, NotificationCallback } from './notification';
-export default Notice;
+export type { NotificationCallback, NotificationInstance, NotificationProps } from './notification';
+
+Notification.displayName = '@ligero/notification';
+export default Notification;
