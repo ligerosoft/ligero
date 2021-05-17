@@ -7,3 +7,4 @@ export { default as Row } from './row';
 export { default as Toast } from './toast';
 export { default as Transition } from './transition';
 export { default as Overlay } from './overlay';
+export { default as Notification } from './notification';
