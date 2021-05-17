@@ -179,4 +179,6 @@ const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref
   );
 };
 
+Button.displayName = '@ligero/button';
+
 export default React.forwardRef(Button);

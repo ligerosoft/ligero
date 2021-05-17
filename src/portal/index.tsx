@@ -36,4 +36,6 @@ const Portal: React.FC<PortalProps> = (props) => {
   return ReactDOM.createPortal(children, parent || wrapper.current!);
 };
 
+Portal.displayName = '@ligero/portal';
+
 export default Portal;

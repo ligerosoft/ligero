@@ -66,6 +66,6 @@ const Col = React.forwardRef<HTMLDivElement, ColProps>((props, ref) => {
   );
 });
 
-Col.displayName = 'Col';
+Col.displayName = '@ligero/col';
 
 export default Col;

@@ -106,6 +106,4 @@ const Popup: React.FC<PopupProps> = (props) => {
   return <Portal getContainer={getContainer}>{node}</Portal>;
 };
 
-Popup.displayName = '@ligero/popup';
-
 export default Popup;

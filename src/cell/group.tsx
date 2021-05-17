@@ -1,7 +1,7 @@
-import React from 'react';
-import usePrefix from '../hooks/use-prefix';
-import { BORDER_TOP_BOTTOM } from '../constant';
 import cs from 'classnames';
+import React from 'react';
+import { BORDER_TOP_BOTTOM } from '../constant';
+import usePrefix from '../hooks/use-prefix';
 
 export interface CellGroupProps {
   prefixCls?: string;
@@ -21,6 +21,6 @@ const CellGroup: React.FC<CellGroupProps> = (props) => {
   );
 };
 
-CellGroup.displayName = 'CellGroup';
+CellGroup.displayName = '@ligero/cell/group';
 
 export default CellGroup;

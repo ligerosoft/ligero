@@ -58,4 +58,6 @@ const Transition = (props: TransitionProps) => {
   );
 };
 
+Transition.displayName = '@ligero/transition';
+
 export default Transition;

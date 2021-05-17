@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import InternalPopup from './popup';
+import { useEffect, useRef, useState } from 'react';
 import type { PopupProps } from './popup';
+import InternalPopup from './popup';
 
 const Popup = (props: PopupProps) => {
   const { visible, afterClose, forceRender } = props;
@@ -28,6 +28,9 @@ const Popup = (props: PopupProps) => {
     />
   );
 };
+
+Popup.displayName = '@ligero/popup';
+
 export type { PopupProps };
 
 export default Popup;

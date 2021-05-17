@@ -99,6 +99,6 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   );
 });
 
-Row.displayName = 'Row';
+Row.displayName = '@ligero/row';
 
 export default Row;

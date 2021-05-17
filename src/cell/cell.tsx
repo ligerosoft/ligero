@@ -31,6 +31,6 @@ const Cell: React.FC<CellProps> = (props) => {
   );
 };
 
-Cell.displayName = 'Cell';
+Cell.displayName = '@ligero/cell';
 
 export default Cell;
