@@ -6,9 +6,9 @@ import { getTransitionStyles, LigeroTransition } from './transitons';
 export type { LigeroTransition };
 interface TransitionProps {
   children: (styles?: React.CSSProperties) => React.ReactNode;
-  visible: boolean;
+  visible?: boolean;
   duration?: number;
-  transition: LigeroTransition;
+  transition?: LigeroTransition;
   timingFunction?: string;
   destroyOnClose?: boolean;
   onExited?: () => void;
@@ -19,7 +19,7 @@ interface TransitionProps {
 const Transition = (props: TransitionProps) => {
   const {
     children,
-    visible,
+    visible = false,
     duration = 200,
     transition = 'fade',
     timingFunction = 'ease',

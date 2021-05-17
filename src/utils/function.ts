@@ -19,7 +19,7 @@ export function isDef(val: unknown): val is undefined {
   return typeof val !== undefined;
 }
 
-export function isFunction(val: unknown) {
+export function isFunction(val: unknown): val is () => void {
   return typeof val === 'function';
 }
 
