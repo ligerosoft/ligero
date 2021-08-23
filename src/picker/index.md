@@ -8,7 +8,7 @@ nav:
   path: /components
 ---
 
-### Picker
+## Picker
 
 `Picker`用于多个选项中选择其中一项,通过 `columns`来配置数据.
 
@@ -19,7 +19,7 @@ const columns = ['星期一', '星期二', '星期三', '星期四', '星期五'
 <Picker columns={columns} title="日期选择" />
 ```
 
-#### 默认选中项
+### 默认选中项
 
 通过`defaultIndex`来设置默认选中项,当为多列时,其为数组.
 
@@ -28,7 +28,7 @@ const columns = ['星期一', '星期二', '星期三', '星期四', '星期五'
 <Picker columns={columns} defaultIndex={1}>
 ```
 
-#### 多列选项设置
+### 多列选项设置
 
 通过二维数组形式的`columns`可以设置多列选项,此时的`defaultIndex`为数组的形式,默认为`[0, 0]`
 
@@ -39,7 +39,7 @@ const columns2 = ['上午', '中午', '下午']
 <Picker columns={[columns, columns2]} defaultIndex={[1, 1]}>
 ```
 
-#### 代码
+### 代码
 
 ```tsx
 import React from 'react';

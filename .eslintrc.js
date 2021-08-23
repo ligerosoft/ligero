@@ -5,5 +5,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'no-plusplus': 'off',
+    '@typescript-eslint/no-shadow': 'off',
   },
 };

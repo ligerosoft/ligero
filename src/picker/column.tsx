@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { correctIndex } from '.';
 import usePrefix from '../hooks/use-prefix';
 import useSetState from '../hooks/use-set-state';
@@ -62,11 +62,30 @@ const PickerColumn: React.FC<PickerColumnProps> = (props) => {
     return -index * itemHeight;
   }
 
+  const index = correctIndex(defaultIndex, count);
+  const offset = correctOffset(defaultIndex);
+
   const [state, setState] = useSetState({
-    index: correctIndex(defaultIndex, count),
-    offset: correctOffset(defaultIndex),
+    index,
+    offset,
     duration: 0,
   });
+
+  useEffect(() => {
+    setState({
+      index,
+      offset,
+    });
+  }, [defaultIndex]);
+
+  useEffect(() => {
+    if (state.index >= count) {
+      setState({
+        index: count - 1,
+        offset: correctOffset(count - 1),
+      });
+    }
+  }, [columns.join(',')]);
 
   const moving = useRef<boolean>(false);
   const startOffset = useRef<number>(0);
@@ -171,7 +190,7 @@ const PickerColumn: React.FC<PickerColumnProps> = (props) => {
   }
 
   const handleClick = (column: PickerColumnType) => {
-    if (!moving.current) {
+    if (!moving.current || !readonly) {
       setByValue(column, DURATION);
     }
   };

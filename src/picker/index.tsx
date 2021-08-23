@@ -1,5 +1,5 @@
 import cs from 'classnames';
-import React, { useRef } from 'react';
+import React, { useEffect, useImperativeHandle, useRef } from 'react';
 import { BORDER_UNSET_TOP_BOTTOM } from '../constant';
 import usePrefix from '../hooks/use-prefix';
 import PickerColumn, { PickerColumnProps, PickerColumns } from './column';
@@ -15,6 +15,7 @@ export type PickerChangeHandler = (
   value: PickerColumnType | PickerColumns,
   index: number | number[],
 ) => void;
+
 export interface PickerProps extends Omit<PickerColumnProps, 'columns' | 'defaultIndex'> {
   prefixCls?: string;
   className?: string;
@@ -37,8 +38,11 @@ export function correctIndex(index: number, len: number) {
   if (index < 0) return 0;
   return index || 0;
 }
+export type PickerActionRef = {
+  getIndexByValue: (value: string | string[]) => number | number[];
+};
 
-const Picker: React.FC<PickerProps> = (props) => {
+const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (props, ref) => {
   const {
     className,
     itemHeight = ITEM_HEIGHT,
@@ -53,10 +57,26 @@ const Picker: React.FC<PickerProps> = (props) => {
   } = props;
   const { bem } = usePrefix('picker', props.prefixCls);
 
-  const isPickerGroup = columns.some((item) => Array.isArray(item));
+  const isPickerGroup = columns.some((item: any) => Array.isArray(item));
 
   const indexRef = useRef(getIndex(defaultIndex));
   const valueRef = useRef(getValue());
+
+  useEffect(() => {
+    indexRef.current = getIndex(defaultIndex);
+    valueRef.current = getValue();
+  }, [defaultIndex]);
+
+  useImperativeHandle(ref, () => ({ getIndexByValue }));
+
+  function getIndexByValue(value: string | string[]) {
+    if (isPickerGroup) {
+      return (columns as PickerColumns[]).map((column, index) => {
+        return column.findIndex((item) => value[index] === item) || 0;
+      });
+    }
+    return (columns as PickerColumns).findIndex((column) => column === value) || 0;
+  }
 
   function getIndex(indexes?: number | number[]) {
     if (isPickerGroup) {
@@ -159,4 +179,4 @@ const Picker: React.FC<PickerProps> = (props) => {
 
 Picker.displayName = '@ligero/picker';
 
-export default Picker;
+export default React.forwardRef(Picker);
