@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React from 'react';
 import { Transition as LTransition } from 'react-transition-group';
 import { getTransitionStyles, LigeroTransition } from './transitons';
@@ -33,6 +32,7 @@ const Transition = (props: TransitionProps) => {
   return (
     <LTransition
       onEnter={(node: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         node.offsetHeight;
         onEnter?.();
       }}

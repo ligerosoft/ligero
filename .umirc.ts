@@ -13,14 +13,21 @@ export default defineConfig({
       'import',
       {
         libraryName: 'ligero',
-        camel2DashComponentName: false,
-        customStyleName: () => {
-          return `./style/index.less`; // 注意：这里 ./ 不可省略
-        },
+        style: true,
+        // customStyleName: () => {
+        //   return `./style/index.less`; // 注意：这里 ./ 不可省略
+        // },
       },
-      'lean',
     ],
   ],
   webpack5: {},
+  // themeConfig: {
+  //   hd: {
+  //     rules: [{ mode: 'vw', options: [32, 640] }],
+  //   },
+  // },
+  styles: [
+    `.__dumi-default-mobile-demo-layout {background: #f7f8fa; };.__dumi-default-mobile-demo-layout .ligero-button { margin-right: 16px}; .demo .ligero-col {background-clip: content-box}; .demo .ligero-col:nth-child(odd) {opacity: 0.6};`,
+  ],
   // more config: https://d.umijs.org/config
 });

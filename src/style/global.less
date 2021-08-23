@@ -14,6 +14,13 @@
   &--top-bottom {
     position: relative;
   }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: 1px 0;
+    }
+  }
 }
 
 .ligero-overlay {

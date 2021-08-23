@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
 const MIN_DISTANCE = 10;
 
@@ -25,14 +25,18 @@ export default function useTouch() {
   const reset = () => {
     startX.current = 0;
     startY.current = 0;
+    deltaY.current = 0;
+    deltaX.current = 0;
+    offsetX.current = 0;
+    offsetX.current = 0;
   };
-  const start = (e: TouchEvent) => {
+  const start = (e: React.TouchEvent | TouchEvent) => {
     reset();
     startX.current = e.touches[0].clientX;
     startY.current = e.touches[0].clientY;
   };
 
-  const move = (e: TouchEvent) => {
+  const move = (e: React.TouchEvent | TouchEvent) => {
     const touch = e.touches[0];
 
     deltaX.current = touch.clientX - startX.current;
@@ -52,13 +56,13 @@ export default function useTouch() {
     move,
     reset,
 
-    startX,
-    startY,
-    deltaX,
-    deltaY,
+    startX: startX.current,
+    startY: startY.current,
+    deltaX: deltaX.current,
+    deltaY: deltaY.current,
 
-    offsetX,
-    offsetY,
+    offsetX: offsetX.current,
+    offsetY: offsetY.current,
 
     direction,
     isHorizontal,

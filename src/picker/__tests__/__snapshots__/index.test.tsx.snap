@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picker it should basic render corretly 1`] = `
+<@ligero/picker
+  columns={
+    Array [
+      "red",
+      "blue",
+      "green",
+    ]
+  }
+>
+  <div
+    className="ligero-picker"
+  >
+    <div
+      className="ligero-picker__toolbar"
+    >
+      <button
+        className="ligero-picker__cancel"
+        onClick={[Function]}
+        type="button"
+      >
+        取消
+      </button>
+      <div
+        className="ligero-picker__title"
+      />
+      <button
+        className="ligero-picker__confirm"
+        onClick={[Function]}
+        type="button"
+      >
+        确定
+      </button>
+    </div>
+    <div
+      className="ligero-picker__columns"
+      style={
+        Object {
+          "height": 240,
+        }
+      }
+    >
+      <PickerColumn
+        columns={
+          Array [
+            "red",
+            "blue",
+            "green",
+          ]
+        }
+        onChange={[Function]}
+      >
+        <div
+          className="ligero-picker-column"
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="ligero-picker-column__wrapper"
+            onTransitionEnd={[Function]}
+            style={
+              Object {
+                "transform": "translate3d(0, 96px, 0)",
+                "transitionDuration": "0ms",
+                "transitionProperty": "none",
+              }
+            }
+          >
+            <div
+              className="ligero-picker-column__item"
+              key="red"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              red
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="blue"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              blue
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="green"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              green
+            </div>
+          </div>
+        </div>
+      </PickerColumn>
+      <div
+        className="ligero-picker__mask"
+        style={
+          Object {
+            "backgroundSize": "100% 96px",
+          }
+        }
+      />
+      <div
+        className="ligero-hairline-unset--top-bottom ligero-picker__hairline"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      />
+    </div>
+  </div>
+</@ligero/picker>
+`;
+
+exports[`Picker set default index 1`] = `
+<@ligero/picker
+  columns={
+    Array [
+      "red",
+      "blue",
+      "green",
+    ]
+  }
+>
+  <div
+    className="ligero-picker"
+  >
+    <div
+      className="ligero-picker__toolbar"
+    >
+      <button
+        className="ligero-picker__cancel"
+        onClick={[Function]}
+        type="button"
+      >
+        取消
+      </button>
+      <div
+        className="ligero-picker__title"
+      />
+      <button
+        className="ligero-picker__confirm"
+        onClick={[Function]}
+        type="button"
+      >
+        确定
+      </button>
+    </div>
+    <div
+      className="ligero-picker__columns"
+      style={
+        Object {
+          "height": 240,
+        }
+      }
+    >
+      <PickerColumn
+        columns={
+          Array [
+            "red",
+            "blue",
+            "green",
+          ]
+        }
+        onChange={[Function]}
+      >
+        <div
+          className="ligero-picker-column"
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="ligero-picker-column__wrapper"
+            onTransitionEnd={[Function]}
+            style={
+              Object {
+                "transform": "translate3d(0, 96px, 0)",
+                "transitionDuration": "0ms",
+                "transitionProperty": "none",
+              }
+            }
+          >
+            <div
+              className="ligero-picker-column__item"
+              key="red"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              red
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="blue"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              blue
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="green"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              green
+            </div>
+          </div>
+        </div>
+      </PickerColumn>
+      <div
+        className="ligero-picker__mask"
+        style={
+          Object {
+            "backgroundSize": "100% 96px",
+          }
+        }
+      />
+      <div
+        className="ligero-hairline-unset--top-bottom ligero-picker__hairline"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      />
+    </div>
+  </div>
+</@ligero/picker>
+`;
+
+exports[`Picker set default index 2`] = `
+<@ligero/picker
+  columns={
+    Array [
+      "red",
+      "blue",
+      "green",
+    ]
+  }
+  defaultIndex={2}
+>
+  <div
+    className="ligero-picker"
+  >
+    <div
+      className="ligero-picker__toolbar"
+    >
+      <button
+        className="ligero-picker__cancel"
+        onClick={[Function]}
+        type="button"
+      >
+        取消
+      </button>
+      <div
+        className="ligero-picker__title"
+      />
+      <button
+        className="ligero-picker__confirm"
+        onClick={[Function]}
+        type="button"
+      >
+        确定
+      </button>
+    </div>
+    <div
+      className="ligero-picker__columns"
+      style={
+        Object {
+          "height": 240,
+        }
+      }
+    >
+      <PickerColumn
+        columns={
+          Array [
+            "red",
+            "blue",
+            "green",
+          ]
+        }
+        defaultIndex={2}
+        onChange={[Function]}
+      >
+        <div
+          className="ligero-picker-column"
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="ligero-picker-column__wrapper"
+            onTransitionEnd={[Function]}
+            style={
+              Object {
+                "transform": "translate3d(0, 96px, 0)",
+                "transitionDuration": "0ms",
+                "transitionProperty": "none",
+              }
+            }
+          >
+            <div
+              className="ligero-picker-column__item"
+              key="red"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              red
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="blue"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              blue
+            </div>
+            <div
+              className="ligero-picker-column__item"
+              key="green"
+              onClick={[Function]}
+              style={
+                Object {
+                  "height": 48,
+                }
+              }
+            >
+              green
+            </div>
+          </div>
+        </div>
+      </PickerColumn>
+      <div
+        className="ligero-picker__mask"
+        style={
+          Object {
+            "backgroundSize": "100% 96px",
+          }
+        }
+      />
+      <div
+        className="ligero-hairline-unset--top-bottom ligero-picker__hairline"
+        style={
+          Object {
+            "height": 48,
+          }
+        }
+      />
+    </div>
+  </div>
+</@ligero/picker>
+`;
