@@ -9,7 +9,7 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   base: '/ligero',
-  publicPath: '/ligero',
+  publicPath: '/ligero/',
   extraBabelPlugins: [
     [
       'import',
