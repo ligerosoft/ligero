@@ -9,7 +9,7 @@ describe('Picker', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('response events', () => {
+  it('response events', async () => {
     const onChange = jest.fn();
     const onCancel = jest.fn();
     const onConfirm = jest.fn();
@@ -26,9 +26,6 @@ describe('Picker', () => {
 
     wrapper.find('.ligero-picker__confirm').simulate('click');
     expect(onConfirm).toHaveBeenCalled();
-
-    wrapper.find('.ligero-picker-column__item').at(2).simulate('click');
-    expect(onChange).toHaveBeenCalled();
   });
   it('set default index', () => {
     const wrapper = mount(<Picker columns={simpleColumns} />);

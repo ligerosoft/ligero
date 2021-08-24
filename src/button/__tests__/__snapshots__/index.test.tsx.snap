@@ -17,7 +17,7 @@ exports[`Button render button with plain props and color 1`] = `
 `;
 
 exports[`Button render button with plain props and color 2`] = `
-<ForwardRef(Button)
+<ForwardRef(@ligero/button)
   color="purple"
   plain={true}
 >
@@ -42,7 +42,7 @@ exports[`Button render button with plain props and color 2`] = `
       </span>
     </div>
   </button>
-</ForwardRef(Button)>
+</ForwardRef(@ligero/button)>
 `;
 
 exports[`Button render correctly 1`] = `

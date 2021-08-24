@@ -202,7 +202,7 @@ const PickerColumn: React.FC<PickerColumnProps> = (props) => {
           key={column.value}
           className={bem('item')}
           style={{ height: itemHeight }}
-          onClick={() => handleClick(column)}
+          onTouchEnd={() => handleClick(column)}
         >
           {column.label}
         </div>

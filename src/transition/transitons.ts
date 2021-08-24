@@ -1,4 +1,4 @@
-import { isString } from '@/utils';
+import { isString } from '../utils';
 import React from 'react';
 import { TransitionStatus } from 'react-transition-group';
 

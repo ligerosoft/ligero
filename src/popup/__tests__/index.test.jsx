@@ -17,11 +17,11 @@ describe('Popup', () => {
     expect(popup.find('.ligero-popup')).toBeTruthy();
   });
 
-  it('afterClose should be called when click mask', () => {
+  it('should be called when click overlay', () => {
     const close = jest.fn();
-    const wrapper = mount(<Popup afterClose={close} visible />);
+    const wrapper = mount(<Popup onOverlayClick={close} visible />);
 
-    wrapper.find('.ligero-popup__mask').simulate('click');
+    wrapper.find('.ligero-overlay').simulate('click');
 
     expect(close).toHaveBeenCalled();
   });
@@ -30,7 +30,7 @@ describe('Popup', () => {
     const close = jest.fn();
     const wrapper = mount(<Popup maskClosable={false} visible />);
 
-    wrapper.find('.ligero-popup__mask').simulate('click');
+    wrapper.find('.ligero-overlay').simulate('click');
     expect(close).not.toHaveBeenCalled();
   });
 });

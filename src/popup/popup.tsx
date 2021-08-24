@@ -1,4 +1,4 @@
-import Transition from '@/transition';
+import Transition from '../transition';
 import cs from 'classnames';
 import React, { useEffect, useState } from 'react';
 import useLock from '../hooks/use-lock';

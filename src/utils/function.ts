@@ -23,6 +23,13 @@ export function isFunction(val: unknown): val is (...args: any[]) => void {
   return typeof val === 'function';
 }
 
+export function isDate(val: unknown): val is Date {
+  return (
+    Object.prototype.toString.call(val) === '[object Date]' &&
+    !Number.isNaN(Date.parse(val as string))
+  );
+}
+
 export default function toArray(
   children: React.ReactNode,
   option: Record<string, any> = {},
@@ -47,3 +54,31 @@ export default function toArray(
 }
 
 export const tuple = <T extends string[]>(...args: T) => args;
+
+export function clamp(num: number, min: number, max: number): number {
+  return Math.min(Math.max(num, min), max);
+}
+
+export function lastDayOfMonth(year: number, month: number) {
+  const today = new Date(year, month - 1);
+  return new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+}
+
+export function range<T>(
+  from: number,
+  to: number,
+  iterate: (index: number) => T,
+  closeInterval: boolean = false,
+) {
+  const time = to - from + (closeInterval ? 1 : 0);
+  const result: T[] = Array(time);
+  let index = -1;
+  while (++index < time) {
+    result[index] = iterate(index);
+  }
+  return result;
+}
+
+export function padZero(val: number | string) {
+  return val.toString().padStart(2, '0');
+}

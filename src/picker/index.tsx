@@ -38,6 +38,7 @@ export function correctIndex(index: number, len: number) {
   if (index < 0) return 0;
   return index || 0;
 }
+
 export type PickerActionRef = {
   getIndexByValue: (value: string | string[]) => number | number[];
 };
@@ -57,7 +58,7 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
   } = props;
   const { bem } = usePrefix('picker', props.prefixCls);
 
-  const isPickerGroup = columns.some((item: any) => Array.isArray(item));
+  const isGroup = columns.some((item: any) => Array.isArray(item));
 
   const indexRef = useRef(getIndex(defaultIndex));
   const valueRef = useRef(getValue());
@@ -70,7 +71,7 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
   useImperativeHandle(ref, () => ({ getIndexByValue }));
 
   function getIndexByValue(value: string | string[]) {
-    if (isPickerGroup) {
+    if (isGroup) {
       return (columns as PickerColumns[]).map((column, index) => {
         return column.findIndex((item) => value[index] === item) || 0;
       });
@@ -79,7 +80,7 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
   }
 
   function getIndex(indexes?: number | number[]) {
-    if (isPickerGroup) {
+    if (isGroup) {
       return (columns as PickerColumns[]).map((column, index) => {
         const len = column.length;
         return correctIndex((indexes as number[])?.[index] || 0, len);
@@ -89,7 +90,7 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
   }
 
   function getValue() {
-    if (isPickerGroup) {
+    if (isGroup) {
       return (columns as PickerColumns[]).map((column, index) => {
         return column.find((item, i) => {
           let findIndex = (indexRef.current as number[])[index] || 0;
@@ -136,12 +137,14 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
   };
 
   const renderPicker = () => {
-    if (isPickerGroup) {
+    if (isGroup) {
       return (columns as PickerColumns[]).map((column, index) => {
         return (
           <PickerColumn
             {...rest}
             key={index.toString()}
+            itemHeight={itemHeight}
+            visibleCount={visibleCount}
             defaultIndex={(defaultIndex as number[])?.[index]}
             columns={column}
             onChange={(changed, i) => handleColumnsChange(changed, i, index)}
@@ -152,6 +155,8 @@ const Picker: React.ForwardRefRenderFunction<PickerActionRef, PickerProps> = (pr
     return (
       <PickerColumn
         {...rest}
+        itemHeight={itemHeight}
+        visibleCount={visibleCount}
         defaultIndex={defaultIndex as number}
         columns={columns as PickerColumns}
         onChange={handleChange}

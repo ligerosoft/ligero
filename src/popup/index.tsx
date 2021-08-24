@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { PopupProps } from './popup';
 import InternalPopup from './popup';
 
-const Popup = (props: PopupProps) => {
+const Popup: React.FC<PopupProps> = (props) => {
   const { visible, afterClose, forceRender } = props;
   const [animatedVisible, setAnimatedVisible] = useState(false);
 

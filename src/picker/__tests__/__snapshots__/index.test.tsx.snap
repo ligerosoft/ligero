@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Picker it should basic render corretly 1`] = `
-<@ligero/picker
+<ForwardRef(@ligero/picker)
   columns={
     Array [
       "red",
@@ -42,7 +42,7 @@ exports[`Picker it should basic render corretly 1`] = `
         }
       }
     >
-      <PickerColumn
+      <@ligero/picker/column
         columns={
           Array [
             "red",
@@ -50,7 +50,9 @@ exports[`Picker it should basic render corretly 1`] = `
             "green",
           ]
         }
+        itemHeight={48}
         onChange={[Function]}
+        visibleCount={5}
       >
         <div
           className="ligero-picker-column"
@@ -73,7 +75,7 @@ exports[`Picker it should basic render corretly 1`] = `
             <div
               className="ligero-picker-column__item"
               key="red"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -85,7 +87,7 @@ exports[`Picker it should basic render corretly 1`] = `
             <div
               className="ligero-picker-column__item"
               key="blue"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -97,7 +99,7 @@ exports[`Picker it should basic render corretly 1`] = `
             <div
               className="ligero-picker-column__item"
               key="green"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -108,7 +110,7 @@ exports[`Picker it should basic render corretly 1`] = `
             </div>
           </div>
         </div>
-      </PickerColumn>
+      </@ligero/picker/column>
       <div
         className="ligero-picker__mask"
         style={
@@ -127,11 +129,11 @@ exports[`Picker it should basic render corretly 1`] = `
       />
     </div>
   </div>
-</@ligero/picker>
+</ForwardRef(@ligero/picker)>
 `;
 
 exports[`Picker set default index 1`] = `
-<@ligero/picker
+<ForwardRef(@ligero/picker)
   columns={
     Array [
       "red",
@@ -172,7 +174,7 @@ exports[`Picker set default index 1`] = `
         }
       }
     >
-      <PickerColumn
+      <@ligero/picker/column
         columns={
           Array [
             "red",
@@ -180,7 +182,9 @@ exports[`Picker set default index 1`] = `
             "green",
           ]
         }
+        itemHeight={48}
         onChange={[Function]}
+        visibleCount={5}
       >
         <div
           className="ligero-picker-column"
@@ -203,7 +207,7 @@ exports[`Picker set default index 1`] = `
             <div
               className="ligero-picker-column__item"
               key="red"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -215,7 +219,7 @@ exports[`Picker set default index 1`] = `
             <div
               className="ligero-picker-column__item"
               key="blue"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -227,7 +231,7 @@ exports[`Picker set default index 1`] = `
             <div
               className="ligero-picker-column__item"
               key="green"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -238,7 +242,7 @@ exports[`Picker set default index 1`] = `
             </div>
           </div>
         </div>
-      </PickerColumn>
+      </@ligero/picker/column>
       <div
         className="ligero-picker__mask"
         style={
@@ -257,11 +261,11 @@ exports[`Picker set default index 1`] = `
       />
     </div>
   </div>
-</@ligero/picker>
+</ForwardRef(@ligero/picker)>
 `;
 
 exports[`Picker set default index 2`] = `
-<@ligero/picker
+<ForwardRef(@ligero/picker)
   columns={
     Array [
       "red",
@@ -303,7 +307,7 @@ exports[`Picker set default index 2`] = `
         }
       }
     >
-      <PickerColumn
+      <@ligero/picker/column
         columns={
           Array [
             "red",
@@ -312,7 +316,9 @@ exports[`Picker set default index 2`] = `
           ]
         }
         defaultIndex={2}
+        itemHeight={48}
         onChange={[Function]}
+        visibleCount={5}
       >
         <div
           className="ligero-picker-column"
@@ -335,7 +341,7 @@ exports[`Picker set default index 2`] = `
             <div
               className="ligero-picker-column__item"
               key="red"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -347,7 +353,7 @@ exports[`Picker set default index 2`] = `
             <div
               className="ligero-picker-column__item"
               key="blue"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -359,7 +365,7 @@ exports[`Picker set default index 2`] = `
             <div
               className="ligero-picker-column__item"
               key="green"
-              onClick={[Function]}
+              onTouchEnd={[Function]}
               style={
                 Object {
                   "height": 48,
@@ -370,7 +376,7 @@ exports[`Picker set default index 2`] = `
             </div>
           </div>
         </div>
-      </PickerColumn>
+      </@ligero/picker/column>
       <div
         className="ligero-picker__mask"
         style={
@@ -389,5 +395,5 @@ exports[`Picker set default index 2`] = `
       />
     </div>
   </div>
-</@ligero/picker>
+</ForwardRef(@ligero/picker)>
 `;
